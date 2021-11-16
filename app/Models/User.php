@@ -24,9 +24,10 @@ class User extends Authenticatable
         'password',
         'avatar',
         'occupation',
-        'is_admin'
+        'is_admin',
+        'email_verified_at'
     ];
-
+    protected $stateless = false;
     /**
      * The attributes that should be hidden for serialization.
      *

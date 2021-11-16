@@ -17,16 +17,16 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest');
 
-Route::get('/login',function(){
-        return view('login');
-        })->middleware('guest')->name('login');
+// Route::get('/login',function(){
+//         return view('login');
+//         })->middleware('guest')->name('login');
 
 Route::get('/login/admin', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')
                 ->name('login-admin');
 
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-                ->middleware('guest');
+// Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+//                 ->middleware('guest');
 
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->middleware('guest')

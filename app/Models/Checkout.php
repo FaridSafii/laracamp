@@ -26,4 +26,5 @@ class Checkout extends Model
     {
         return $this->belongsTo(Camp::class);
     }
+    
 }

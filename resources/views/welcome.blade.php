@@ -191,126 +191,66 @@
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <div class="table-pricing paket-gila">
-                            <p class="story text-center">
-                                GILA BELAJAR
-                            </p>
+                            @forelse ($satu as $item)
+                            <p class="story text-center text-uppercase">
+                                {{ $item->title }}
+                            </p>                                      
                             <h1 class="price text-center">
-                                $280K
+                                @currency($item->price)
                             </h1>
+                            @foreach ($item->CampBenefit as $subitem)
                             <div class="item-benefit-pricing mb-4">
                                 <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
                                 <p>
-                                    Pro Techstack Kit
+                                    {{ $subitem->name }}
                                 </p>
                                 <div class="clear"></div>
                                 <div class="divider"></div>
                             </div>
-                            <div class="item-benefit-pricing mb-4">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    iMac Pro 2021 & Display
-                                </p>
-                                <div class="clear"></div>
-                                <div class="divider"></div>
-                            </div>
-                            <div class="item-benefit-pricing mb-4">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    1-1 Mentoring Program
-                                </p>
-                                <div class="clear"></div>
-                                <div class="divider"></div>
-                            </div>
-                            <div class="item-benefit-pricing mb-4">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    Final Project Certificate
-                                </p>
-                                <div class="clear"></div>
-                                <div class="divider"></div>
-                            </div>
-                            <div class="item-benefit-pricing mb-4">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    Offline Course Videos
-                                </p>
-                                <div class="clear"></div>
-                                <div class="divider"></div>
-                            </div>
-                            <div class="item-benefit-pricing mb-4">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    Future Job Opportinity
-                                </p>
-                                <div class="clear"></div>
-                                <div class="divider"></div>
-                            </div>
-                            <div class="item-benefit-pricing mb-4">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    Premium Design Kit
-                                </p>
-                                <div class="clear"></div>
-                                <div class="divider"></div>
-                            </div>
-                            <div class="item-benefit-pricing">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    Website Builder
-                                </p>
-                                <div class="clear"></div>
-                            </div>
+                            @endforeach
+                            
                             <p>
-                                <a href="{{ route('checkout','gila-belajar') }}" class="btn btn-master btn-primary w-100 mt-3">
+                                <a href="{{ route('checkout',$item->slug) }}" class="btn btn-master btn-primary w-100 mt-3">
                                     Take This Plan
                                 </a>
                             </p>
+                            @empty
+                            <p class="story text-center">
+                                No Data
+                            </p> 
+                            @endforelse
                         </div>
                     </div>
                     <div class="col-lg-6 col-12">
-                        <div class="table-pricing paket-biasa">
-                            <p class="story text-center">
-                                BARU MULAI
-                            </p>
+                        <div class="table-pricing paket-gila">
+                            @forelse ($dua as $items)
+                            <p class="story text-center text-uppercase">
+                                {{ $items->title }}
+                            </p>                                      
                             <h1 class="price text-center">
-                                $140K
+                                @currency($items->price)
                             </h1>
+                            @foreach ($items->CampBenefit as $subitems)
                             <div class="item-benefit-pricing mb-4">
                                 <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
                                 <p>
-                                    1-1 Mentoring Program
+                                    {{ $subitems->name }}
                                 </p>
                                 <div class="clear"></div>
                                 <div class="divider"></div>
                             </div>
-                            <div class="item-benefit-pricing mb-4">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    Final Project Certificate
-                                </p>
-                                <div class="clear"></div>
-                                <div class="divider"></div>
-                            </div>
-                            <div class="item-benefit-pricing mb-4">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    Offline Course Videos
-                                </p>
-                                <div class="clear"></div>
-                                <div class="divider"></div>
-                            </div>
-                            <div class="item-benefit-pricing">
-                                <img src="{{ asset('assets/images/ic_check.svg')}}" alt="">
-                                <p>
-                                    Future Job Opportinity
-                                </p>
-                                <div class="clear"></div>
-                            </div>
+                            @endforeach
+                            
                             <p>
-                                <a href="{{ route('checkout','baru-mulai') }}" class="btn btn-master btn-secondary w-100 mt-3">
-                                    Start With This Plan
+                                <a href="{{ route('checkout',$items->slug) }}" class="btn btn-master btn-primary w-100 mt-3">
+                                    Take This Plan
                                 </a>
                             </p>
+                            @empty
+                            <p class="story text-center">
+                                No Data
+                            </p> 
+                            @endforelse
                         </div>
                     </div>
                 </div>

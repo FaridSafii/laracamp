@@ -3,13 +3,13 @@
 <section>
 <div class="container">
     <div class="row">
-        <div class="col-8 offset-2">
+        <div class="col-12" style="margin-top: 20px">
             <div class="card-header">
-                My Camps
+                My Status Camps
             </div>
-            <div class="card-body">
+            <div class="card-body" >
                 @include('component.alert')
-                <table class="table" style="">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>User</th>
@@ -25,7 +25,7 @@
                             <tr>
                                 <td>{{ $checkout->User->name }}</td>
                                 <td>{{ $checkout->Camp->title }}</td>
-                                <td>{{ $checkout->Camp->price }}</td>
+                                <td>@currency($checkout->Camp->price)</td>
                                 <td>{{ $checkout->created_at->format('M d Y') }}</td>
                                 <td>
                                     @if ($checkout->is_paid)

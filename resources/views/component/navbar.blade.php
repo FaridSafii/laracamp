@@ -24,7 +24,7 @@
                 @auth
                     <div class="d-flex user-logged nav-item dropdown no-arrow">
                         <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Halo, {{ Auth::user()->name }}
+                            Halo, {{ Auth::user()->name }} | {{ Auth::user()->id }}
                             @if (Auth::user()->avatar)
                             <img src="{{ Auth::user()->avatar }}" class="user-photo" alt="" style="border-radius: 50%">
                             @else
@@ -35,6 +35,9 @@
                                     <li>
                                         <a href="{{ route('dashboard') }}" class="dropdown-item">My Dashboard</a>
                                     </li>
+                                    {{-- <li>
+                                        <a href="{{ route('user.profil') }}" class="dropdown-item">Profil</a>
+                                    </li> --}}
                                     <li>
                                         <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Sign Out</a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="post" style="display:none">

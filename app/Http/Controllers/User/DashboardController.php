@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Checkout;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -15,5 +16,18 @@ class DashboardController extends Controller
         return view('user.dashboard',[
             'checkouts'=>$checkouts
         ]);
+    }
+
+    public function store(Request $request)
+    {  
+        //return $request;
+        $data = $request->all();
+        
+        $user = Auth::user();
+        $user->email = $data['email'];
+        $user->name = $data['name'];
+        $user->save();
+
+        return view('user.profil'); 
     }
 }

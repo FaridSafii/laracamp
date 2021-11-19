@@ -17,14 +17,14 @@ class CampSeeder extends Seeder
             [
                 'title' => 'Gila Belajar',
                 'slug' => 'gila-belajar',
-                'price' => 280,
+                'price' => 599000,
                 'created_at' => date('Y-m-d',time()),
                 'updated_at' => date('Y-m-d',time()),
             ],
             [
                 'title' => 'Baru Mulai',
                 'slug' => 'baru-mulai',
-                'price' => 140,
+                'price' => 299000,
                 'created_at'=> date('Y-m-d',time()),
                 'updated_at'=> date('Y-m-d',time()),
             ]

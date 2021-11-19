@@ -32,14 +32,14 @@
                                 @csrf
                                 <div class="mb-4">
                                     <label class="form-label">Full Name</label>
-                                    <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : ''}}" value="{{ Auth::user()->name }}" required />
+                                    <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : ''}}" value="{{ Auth::user()->name }}" disabled />
                                     @if ($errors->has('name'))
                                         <p class="text-danger">{{ $errors->first('name') }}</p>
                                     @endif
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Email Address</label>
-                                    <input name="email" type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : ''}}" value="{{ Auth::user()->email }}" required />
+                                    <input name="email" type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : ''}}" value="{{ Auth::user()->email }}" disabled />
                                     @if ($errors->has('email'))
                                         <p class="text-danger">{{ $errors->first('email') }}</p>
                                     @endif
